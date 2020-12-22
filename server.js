@@ -55,11 +55,23 @@ app.get("/api/waitlist", function(req, res) {
     return res.json(waitList);
   });
 
-
+//Create reservations - takes in JSON input
 app.post("/api/reservations", function(req, res) {
-  var newReservations = req.body;
+  if ( reservations <= 5) {
+      var newReservations = req.body};
   newReservations.routeName = newReservations.name.replace(/\s+/g, "").toLowerCase();
+  reservations.push(newReservations);
+  res.json(newReservations);
 });
+
+//Create waitlist - takes in JSON input
+
+app.post("/api/waitlist", function(req, res) {
+    var newWaitList = req.body;
+    newWaitList.routeName = newWaitList.name.replace(/\s+/g, "").toLowerCase();
+    waitList.push(newWaitList);
+    res.json(newWaitList);
+  });
 
 
 // Starts the server to begin listening
