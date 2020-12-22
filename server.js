@@ -1,4 +1,4 @@
-// 
+
 const express = require('express');
 const path = require('path');
 
@@ -55,7 +55,10 @@ app.get("/api/waitlist", function(req, res) {
   });
 
 
-
+app.post("/api/reservations", function(req, res) {
+  var newReservations = req.body;
+  newReservations.routeName = newReservations.name.replace(/\s+/g, "").toLowerCase();
+});
 
 
   // Starts the server to begin listening
