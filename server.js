@@ -1,6 +1,7 @@
-
 const express = require('express');
 const path = require('path');
+
+// Set up express app
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -61,7 +62,7 @@ app.post("/api/reservations", function(req, res) {
 });
 
 
-  // Starts the server to begin listening
+// Starts the server to begin listening
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
